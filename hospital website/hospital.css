@@ -1,0 +1,932 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  font-family: "Montserrat",sans-serif;
+  line-height: 1.5;
+  user-select: none;
+}
+/*these are some general styles*/
+.container {
+  width: 82%;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+  line-height: 1.2;
+}
+
+section {
+  margin-top: 6rem;
+}
+section > h2 {
+  text-align: center;
+}
+section > p {
+  text-align: center;
+  width: 42%;
+  margin: 0.6rem auto 2.5rem;
+}
+
+.btn {
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  background: #f72585;
+  color: #ffffff;
+  cursor: pointer;
+  transform: all 400ms ease;
+  /*hover*/
+}
+.btn a{
+  color: #ffffff;
+}
+.btn:hover {
+  background: #f84c9b;
+  box-shadow: 0 1rem 1.6rem rgba(12, 3, 27, 0.15);
+}
+
+.btn-primary {
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  background: #480ca8;
+  color: #ffffff;
+  cursor: pointer;
+  transform: all 400ms ease;
+  /*hover*/
+}
+.btn-primary  a{
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background: #580fce;
+  box-shadow: 0 1rem 1.6rem rgba(12, 3, 27, 0.15);
+}
+
+
+/*styling the navbar*/
+header{
+  background: linear-gradient(135deg,#945af3,#80cdcd);
+  overflow: hidden;
+}
+nav{
+  box-shadow: 0 0.2rem 1rem rgb(0, 0, 0);
+  position: fixed;
+  padding: 0 1rem;
+  align-items: center;
+  padding: 0.6rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  z-index: 100;
+  width: 100%;
+  /*to make it to the center we add
+  place-items: center;*/
+}
+/*we add this class in order to make make the nav position :fixed*/
+.nav-container{
+  display: flex;
+  justify-content: space-around;
+}
+nav .logo h2 a{
+  color: #1B2430;
+}
+nav ul{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+nav ul li a{
+  color: rgb(21, 20, 20);
+  transition: 500ms;
+}
+nav ul li a:hover{
+  background:#0c031b;
+  padding: 0.2rem;
+  color:#ffffff;
+  border-radius: 15px;
+}
+.close-btn{
+  display: none;
+}
+.head {
+  padding: 4rem 4.2rem 4.2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  place-items: center;
+}
+
+.head  .text-content{
+  width: 40%;
+}
+.head  .text-content h2{
+  font-size: 30px;
+  margin-bottom: 0.3rem;
+}
+
+.head  .text-content p{
+  margin-bottom: 2rem;
+}
+.head  .image-content{
+  width: 55%;
+  padding-right: 0px;
+}
+
+.head .image-content img{
+  width: 100%;
+}
+
+#services{
+  padding-bottom: 50px;
+  background: #aeddd9a6;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 50px;
+}
+
+#services h2{
+  font-size: 28px;
+}
+#services .content-box{
+  padding: 70px ;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+#services .content-box .box{
+  display: flex;
+  gap: 1rem;
+  height: fit-content;
+  padding: 1rem ;
+  border-radius: 15px;
+  background: linear-gradient(135deg,#945af3,#80cdcd);
+  transition: 400ms;
+}
+#services .content-box .box:hover{
+  margin-top: -0.5rem;
+}
+#services .content-box .box span{
+  margin-bottom: 10px;
+  font-size: 1.7rem;
+}
+#services .content-box  .box p{
+  margin-top: 1rem;
+}
+
+#specialists{
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  background: #aeddd9be;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+#specialists h2{
+  font-size: 28px;
+}
+#specialists .team{
+  width: 68%;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2rem;
+  margin-left: 17%;
+}
+
+#specialists .team .member{
+  background: white;
+  border-radius: 1rem;
+  padding-bottom: 0.4rem;
+  box-shadow:0.3rem  0.4rem 1.5rem rgb(10, 6, 6);
+  position: relative;
+  transition: all 700ms ease;
+}
+/*when we hover on the box*/
+#specialists .team .member:hover{
+  cursor: pointer;
+  box-shadow: none;
+}
+/*when we hover on the box we should show this background*/
+#specialists .team .member:hover .specialist_image::before{
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: all 1s ease;
+  background: linear-gradient(135deg,#955af3c1,#80cdcdbd);
+}
+/*when we hover on the box we should show this social media icons*/
+#specialists .team .member:hover .specialist_social,#specialists .team .member:hover .specialist_whatapp{
+  opacity: 1;
+  visibility: visible;
+}
+#specialists .team .member .specialist_image{
+  height: 13rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+#specialists .team .member .specialist_image img{
+  height: 100%;
+}
+/*this is for the added background when we do hover on the member , we hide it hear*/
+#specialists .team .member .specialist_image::before{
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  transition: all 1s ease;
+  background: linear-gradient(135deg,#955af3c1,#80cdcdbd);
+}
+#specialists .team .member .specialist_info{
+  margin: 0rem 0 1rem;
+  text-align: center;
+}
+#specialists .team .member h3{
+  margin-top: 10px;
+  padding-top: 0;
+  font-weight: 50;
+  text-transform: uppercase;
+}
+
+#specialists .team .member h5{
+  margin-top: 1px;
+  font-weight: 30;
+}
+#specialists .team .member .specialist_social{
+  position: absolute;
+  top: 0.4rem;
+  right: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s 400ms ease;
+}
+#specialists .team .member .specialist_social a{
+  background: white;
+  border-radius: 50%;
+  padding: 0.2rem;
+  transition: all 400ms ease;
+}
+#specialists .team .member .specialist_social a:hover{
+  background: #aeddd9;
+}
+#specialists .team .member .specialist_social a img{
+  width: 95%;
+}
+
+#specialists .team .member .specialist_whatapp{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 28%;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s 400ms ease;
+}
+
+
+#faqs{
+  margin-top: 0;
+  padding: 35px 20px 50px;
+  background: #aeddd9a6;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#faqs .content .faq{
+  padding: 1.5rem 2rem; 
+  margin: 0rem;
+  border-radius: 15px;
+  cursor: default;
+  background:linear-gradient(#815cc1,#44c7c7);
+  transition: 0.7s;
+  font-size: 0.9rem;
+}
+#faqs .content .faq p{
+  margin: 0px 0 10px;
+}
+#faqs .content .faq .informations{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#faqs .content .faq .informations img{
+  border: 4px solid purple;
+  border-radius: 50%;
+  width: 2.5rem;
+  /*this is to make the height as the width*/
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+#faqs.content .faq .informations h3{
+  font-size: 12px;
+  font-weight: 40;
+}
+#faqs.content .faq .informations h5{
+  font-size: 8px;
+  font-weight: 50;
+}
+
+
+
+#apointment{
+  display: flex  ;
+  gap: 2rem;
+  padding: 40px 70px;
+  margin: 0;
+  background: #aeddd9be;
+}
+#apointment .text-content{
+  width: 48%;
+}
+#apointment .text-content h2{
+  font-size: 22px;
+}
+#apointment .text-content  p{
+  margin: 5px 0 15px;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+#apointment .text-content .contents .content{
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+#apointment .text-content .contents .content span{
+  font-size: 30px;
+}
+#apointment.text-content .contents .content .informations h3{
+  font-size: 17px;
+  font-weight: 600;
+}
+#apointment .text-content .contents .content .informations h5{
+  font-size: 12px;
+  font-weight: 300;
+}
+
+#apointment  .contact-content{
+  width: 52%;
+}
+
+#apointment  .contact-content form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-right:5rem;
+}
+#apointment  .contact-content form label{
+  font-weight: 400;
+}
+#apointment .contact-content form input,#apointment  .contact-content form textarea,#apointment  .contact-content form select{
+  width: 96.2%;
+  padding: 1rem;
+  background: #fff;
+  color: #000;
+  border-radius: 0.4rem;
+  resize: none;
+  appearance: none;
+}
+#apointment  .contact-content form input::placeholder,#apointment  .contact-content form textarea::placeholder{
+  color: black;
+}
+/*styling the footer*/
+.footers{
+  background: #0c031b;
+  color: white;
+  margin-top: 0;
+}
+.footer{
+  display: flex;
+  padding: 85px 50px 70px;
+  margin-top: 0;
+}
+/*styling the first part */
+.description{
+  padding-right: 125px ;
+}
+/*styling the title of the first part */
+.footer .description h2{
+  font-size: 30px;
+  margin-bottom: 17px;
+  text-transform: uppercase;
+}
+.footer .description h2 a{
+  text-decoration: none;
+  color: #f72585;
+}
+.footer .description p{
+  margin-bottom: 15px;
+}
+.footer .description .phone{
+  margin-bottom: 15px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.footer .description .email{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+/*styling the second part */
+.footer .Support{
+  padding-right: 125px;
+}
+/*styling the title of the second part */
+.footer .Support h3{
+  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+}
+/*styling the content of this part*/
+.footer .Support ul li{
+  display: block;
+  margin: 15px;
+}
+.footer .Support ul li a{
+  text-decoration: none;
+  transition: 0.5s;
+  color: white;
+}
+.footer .Support ul li a:hover{
+  font-size: 15px;
+  text-decoration: underline;
+  color: #F05454;
+}
+
+/*styling the third part*/
+.footer .permalinks{
+  padding-right: 80px;
+  width: 25%;
+  text-align: center;
+}
+/*styling the title of the third part */
+.footer .permalinks h3{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+}
+
+/*styling the content of this part*/
+.footer .permalinks ul li{
+  display: block;
+  margin: 15px;
+}
+.footer .permalinks ul li a{
+  text-decoration: none;
+  transition: 0.5s;
+  color: white;
+}
+.footer .permalinks ul li a:hover{
+  font-size: 15px;
+  text-decoration: underline;
+  color: #F05454;
+}
+
+/*styling the fourth part*/
+/*styling the title of this part*/
+.footer .Contact-us{
+  text-align: center;
+}
+.footer .Contact-us h3{
+  text-transform: uppercase;
+  font-size: 20px;
+  padding-bottom: 10px;
+  color: white;
+}
+/*styling the content of this part*/
+.footer .Contact-us h5{
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+.footer .Contact-us .specialist_social{
+  display: flex;
+  gap: 0.7rem;
+  transition: all 1s 400ms ease;
+}
+.footer .Contact-us .specialist_social a{
+  background: white;
+  border-radius: 50%;
+  padding: 0.2rem;
+  transition: all 400ms ease;
+}
+.footer .Contact-us .specialist_social a:hover{
+  background: #f72585;
+}
+.footer .Contact-us.specialist_social a img{
+  width: 95%;
+}
+
+/*this is styling the part of copyright*/
+
+.footers h4{
+  text-align: center;
+  padding-bottom: 15px;
+  padding-top: 5px;
+  font-size: 17px;
+  font-weight: 400;
+  font-family:serif;
+  border-top: 1px rgba(255,255,255,0.2) solid;
+}
+.footer .Contact-us ul li{
+  margin-bottom: 10px;
+}
+
+.footer .Contact-us ul li a{
+   color: #ffffff;
+}
+
+.footer .Contact-us ul li a:hover{
+  font-size: 15px;
+  text-decoration: underline;
+  color: #F05454;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:1170px) and (min-width:990px){
+  #specialists .team{
+    width: 80%;
+    gap: 2rem;
+    margin-left: 11.5%;
+  }
+}
+
+/*==============media for tabletes=================*/
+@media screen and (max-width: 996px)  and (min-width:930px) { 
+  .container {
+    width: 90%;
+  }
+
+  section > p {
+    width: 55%;
+  }
+  #specialists .team{
+    width: 90%;
+    gap: 2rem;
+    margin-left: 5.2%;
+  }
+  .footer{
+    display: flex;
+    padding: 45px 65px 45px 45px;
+}
+/*styling the first part */
+.description{
+padding-right: 5px ;
+width: 40%;
+}
+}
+@media screen and (max-width:930px){
+  .footer{
+      display: flex;
+      padding: 45px 65px 45px 45px;
+  }
+/*styling the first part */
+.description{
+  padding-right: 5px ;
+  width: 40%;
+}
+.footer .Support{
+  padding-right: 95px;
+}
+
+
+#services .content-box{
+  gap: 1rem;
+}
+#services .content-box .box{
+  gap: 0.8rem;
+  padding: 0.8rem ;
+}
+#services .content-box .box:hover{
+  margin-top: 0;
+}
+
+#specialists .team{
+  grid-template-columns: repeat(2,1fr);
+}
+
+}
+@media screen and (max-width:850px){
+  .head {
+    padding: 4rem 1.2rem 4.2rem;
+  }
+nav{
+  width: 100%;
+}
+/*we add this class in order to make make the nav position :fixed*/
+.nav-container{
+  display: flex;
+  justify-content: space-around;
+}
+nav ul{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-right: 40px;
+}
+nav ul .btn{
+  display: none;
+}
+
+#services .content-box{
+  padding: 40px ;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+.footer{
+  display: flex;
+  padding: 45px 65px 45px 45px;
+}
+/*styling the first part */
+.description{
+padding-right: 5px ;
+width: 40%;
+}
+.footer .Support{
+  padding-right: 65px;
+}
+}
+
+@media screen and (max-width: 760px){
+  
+.head {
+  gap: 2rem;
+}
+
+#apointment{
+  display: flex  ;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 40px 70px;
+  margin: 0;
+  background: #aeddd9be;
+}
+#apointment .text-content{
+ width:100%;
+}
+
+#apointment .text-content .contents .content{
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+#apointment  .contact-content{
+ width: 100%; 
+}
+
+#apointment  .contact-content form{
+  display: flex;
+  width: 100%; 
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+#apointment .contact-content form input,#apointment  .contact-content form textarea,#apointment  .contact-content form select{
+  width: 100%;
+  padding: 1rem;
+  background: #fff;
+  color: #000;
+  border-radius: 0.4rem;
+  resize: none;
+  appearance: none;
+}
+.text-content h2,.text-content p{
+  text-align: center;
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 0;
+  padding-left: 0;
+}
+.footer .description{
+  width: 100%;
+  justify-content: center;
+}
+/*styling the second part */
+.footer .Support{
+  padding-right: 2px;
+  justify-content: center;
+}
+
+/*styling the third part*/
+.footer .permalinks{
+  display: none;
+}  
+.footer .Contact-us{
+  justify-content: center;
+}
+
+
+.footer .Contact-us .social-media{
+  margin: 0 auto;
+}
+
+.footers .description .phone,.footers .description .email{
+  display: none;
+}
+}
+/*==============media for phones=================*/
+@media screen and (max-width: 630px) {
+.head{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.head  .text-content{
+  width: 100%;
+  text-align: center;
+}
+
+.head  .image-content{
+  width: 100%;
+}
+
+  section > p {
+    width: 90%;
+  }
+  .nav-container{
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+  }
+  nav ul{
+    position: fixed;
+        top: 3rem;
+        right: 6%;
+        height: fit-content;
+        width: 15rem;
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+        z-index: 100;
+        perspective: 300px;
+        display:none
+  }
+  .close-btn{
+    display: block;
+    margin-right: 50px;
+    cursor: pointer;
+  }
+  nav  ul li{
+    width: 100%;
+    height: 4.5rem;
+    /*this is for animations as it is showd*/
+    animation: animatNavItems 300ms  forwards;
+    transform-origin: top right;
+    opacity: 0;
+    
+}
+
+nav ul .btn{
+  box-shadow: -4rem 6rem 10rem rgba(0,0,0,0.6);
+  width: 100%;
+  height: 4.5rem;
+  display: inline-block;  
+  place-items: center; 
+  border-radius: 0%;
+  animation: animatNavItems 800ms  forwards;
+  transform-origin: top right;
+}
+nav  li:nth-child(2){
+    animation-delay: 200ms;
+}
+nav  ul li:nth-child(3){
+    animation-delay: 400ms;
+}
+nav  ul li:nth-child(4){
+    animation-delay: 600ms;
+}
+
+@keyframes animatNavItems{
+  0%{
+      transform:rotateX(90deg) ;
+  }
+  100%{
+      transform: rotateX(0) ;
+      opacity: 1;
+  }
+}
+nav ul li a{
+  background: #4cc9f0;
+  box-shadow: -4rem 6rem 10rem rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
+  display: grid;  
+  place-items: center;  
+}
+nav ul li a:hover{
+  background: #1e5afa;
+  border-radius: 0%;
+}
+  
+  .close-btn .close{
+    display: none;
+  }
+  #services .content-box{
+    padding: 20px ;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+  #specialists .team{
+    grid-template-columns: 1fr;
+  }
+  #specialists .team{
+    width: 55%;
+    gap: 2rem;
+    margin-left: 24%;
+  }
+  
+}/*# sourceMappingURL=hospital.css.map */
+
+
+
+
+@media screen and (max-width: 550px){
+  
+  
+  #services .content-box{
+    padding:20px ;
+    grid-template-columns: 1fr;
+  }
+  #services .content-box  .box p{
+    margin-top: 0.8rem;
+  }
+  .close-btn{
+    margin-right: 10px;
+  }
+  nav ul{
+    position: fixed;
+        right: -1%;
+  }
+}
+
+@media screen and (max-width: 470px){
+  
+  #services .content-box{
+    padding:12px ;
+    grid-template-columns: 1fr;
+  }
+  .footer .description{
+    padding-right: 2px;
+  }
+}
+@media screen and (max-width: 416px){
+ 
+  #specialists .team{
+    width: 65%;
+    gap: 2rem;
+    margin-left: 20%;
+  }
+}
+
+
+  
